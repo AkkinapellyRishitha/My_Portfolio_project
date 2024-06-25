@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/d5a4a26e6b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span>Rishi</span>tha</a>
+        <nav class="navbar">
+            
+                <a href="#" class="active">Portfolio</a>
+                <a href="#">Services</a>
+                <a href="#">Expericence</a>
+                <a href="#">Projects</a>
+                <a href="#">Education</a>
+           
+        </nav>
+        <a href="#" class="contact">Contact Me</a>
+        </header>
+    
+    <section class="home">
+        <div class="home-content">
+            <h3>Hi</h3>
+            <h1>I'm <span>Rishitha<br></span>a Frontend Developer</h1>
+        <p>
+            I am Rishitha Akkinapelly , a passionate and motivated Frontend Developer eager to leverage my skills and hands-on project experience in a dynamic and growth-oriented organization.
+            As a fresher, I bring a wealth of knowledge in designing and developing web pages and websites. My real-time project experience and dedication to continuous learning make me an ideal
+            candidate for a challenging position where I can contribute to and thrive in a collaborative environment. 
+        </p>
+        <div class="btn-box">
+        <button class="btn-1">Hire Me</button>
+        <button class="btn-2">Experience</button>
+        </div>
+        
+    </section>
+    
+    <section class="contact-form">
+        <h2 class="contact-me">Contact<span>Me</span></h2>
+        <form action="#">
+            <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30"  rows="10" placeholder="Your Message" ></textarea>   
+         <input type="submit" vlaue="Send Message" class="btn-1" >
+        </form>
+    </section>
+<footer class="footer">
+   <div class="social">
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    
+   </div>
+   <ul class="list">
+    <li>
+        <a href="#">FAQ</a>
+    </li>
+    <li>
+        <a href="#">Services</a>
+    </li>
+     <li>
+        <a href="#">About Me</a>
+    </li>
+    <li>
+        <a href="#">Contact</a>
+    </li>
+    <li>
+        <a href="#">Privacy Policy</a>
+    </li>
+   </ul>
+   <p class="copy-right">&copy; 2024 Rishitha | All Rights Reserved</p>
+</footer>  
+<!-- java script code   -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to validate email
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+
+        // Function to validate phone number
+        function validatePhoneNumber(phone) {
+            const re = /^\d{10,15}$/;
+            return re.test(phone);
+        }
+
+        // Handle form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.querySelector('input[placeholder="Full Name"]').value.trim();
+            const email = document.querySelector('input[placeholder="Email"]').value.trim();
+            const phone = document.querySelector('input[placeholder="Phone Number"]').value.trim();
+            const subject = document.querySelector('input[placeholder="Subject"]').value.trim();
+            const message = document.querySelector('textarea[placeholder="Your Message"]').value.trim();
+
+            if (!name || !email || !phone || !subject || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (!validatePhoneNumber(phone)) {
+                alert('Please enter a valid phone number (10-15 digits).');
+                return;
+            }
+
+            alert('Your message has been sent successfully!');
+            this.reset();
+        });
+    });
+</script>
+</body>
+</html>
+ 
